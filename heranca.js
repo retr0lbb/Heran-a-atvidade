@@ -1,31 +1,45 @@
-class animal{
+class Animals{
+    constructor(name,age,specie){
+        this.name = name
+        this.age = age
+        this.specie = specie
+    }
+    eat(){
 
-    constructor(peso, raca, nome){
-        this.peso = peso
-        this.raca = raca
-        this.nome = nome
+    }
+    sleep(){
 
+    }
+    makeNoise(){
 
     }
 }
-
-class galinha extends animal{
-    constructor(peso, raca, nome){
-        this.peso;
-        this.raca;
-        this.nome;
-        super(peso,this.peso)
-        super(raca, this.raca)
-        super(nome, this.nome)
+class Mammals extends Animals{
+    constructor(name,age,specie,fur,gestation){
+        super(name,age,specie)
+        this.fur = fur
+        this.gestation = gestation
     }
-    ciscar(){
 
-    }
-    botarOvo(){
-
+}
+class Birds extends Animals{
+    constructor(name,age,specie,fly,egg){
+        super(name,age,specie)
+        this.fly = fly
+        this.egg = egg
     }
 }
 
-const popo = new galinha(1,'aves', 'gisele' )
+class Dog extends( Animals, Mammals){
+    constructor(name, age, specie, fur, gestation, agressive, size){
+        super(name, age, specie, fur,gestation)
+        this.agressive = agressive
+        this.size = size
+    }
 
-console.log(popo)
+}
+
+
+const ruffles = new Dog('ruffles', 1, 'bulldog', true, 9, false, 'Medium')
+
+console.log(ruffles)
